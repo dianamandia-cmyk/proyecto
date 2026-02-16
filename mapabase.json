@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "Empty Style",
+  "metadata": {},
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL"
+    },
+    "6jrszav": {"type": "vector", "url": "https://localhost:3000/tilejson.json"}
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "fondo",
+      "type": "background",
+      "paint": {"background-color": "rgba(183, 218, 147, 1)"}
+    },
+    {
+      "id": "lugar",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "layout": {"visibility": "visible"}
+    },
+    {
+      "id": "agua",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "paint": {"fill-color": "rgba(122, 177, 191, 1)"}
+    },
+    {
+      "id": "limites",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "layout": {
+        "line-join": "miter",
+        "line-cap": "butt",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-translate-anchor": "map",
+        "line-opacity": {
+          "property": "",
+          "type": "exponential",
+          "stops": [[{"zoom": 6, "value": 0}, 1], [{"zoom": 10, "value": 0}, 1]]
+        },
+        "line-width": 0.7
+      }
+    },
+    {
+      "id": "",
+      "type": "circle",
+      "source": "openmaptiles",
+      "source-layer": "place"
+    }
+  ],
+  "id": "ba9p4zi"
+}
